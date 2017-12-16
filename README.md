@@ -1,7 +1,7 @@
 
 # Description
 
-Markdown is found to be easy for writing notes. I want to use it for presentation as my life is filled with meetings and slides. This little tool is to converte a markdown-like file to latex slides. With pdflatex installed, a PDF output is available.
+Markdown is found to be easy for writing notes. I want to use it for presentation as my life is filled with meetings and slides. This little tool is to convert a markdown-like file to latex slides. With pdflatex installed, a PDF output is available.
 
 # How to get it ?
 
@@ -47,7 +47,7 @@ For a pdf output, try
 
 1. ## talk author (the author(s) for the talk, starts with '#a ' and there is a blank after '#a'.)
 
-    `#a \undersline{author A}, author B`
+    `#a \underline{author A}, author B`
 
 1. ## frame, frames are separated by `---`
 
@@ -84,6 +84,11 @@ For a pdf output, try
     `[0.5](fig/plot1.png)`
 
     `[0.5](fig/plot2.pdf)`
+    
+
+1. ## Latex formula is supported.
+
+    `$h(125) \to \mup \mum$`
 
 # Contact and other information
 
