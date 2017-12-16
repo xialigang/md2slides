@@ -5,7 +5,7 @@ Markdown is found to be easy for writing notes. I want to use it for presentatio
 
 # How to get it ?
 
-	git clone [path-to-git]
+	git clone https://github.com/xialigang/md2slides
 	cd md2slides
 	source install.sh
 
