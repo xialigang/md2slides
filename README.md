@@ -51,11 +51,15 @@ For a pdf output, try
 
 1. ## frame, frames are separated by `---`
 
-    frame 1
-    ---
-    frame 2
-    ---
-    frame 3
+    `frame 1`
+
+    `---`
+
+    `frame 2`
+
+    `---`
+
+    `frame 3`
 
 1. ## frame title (starts with '## ' and there is a blank after '##'.)
 
