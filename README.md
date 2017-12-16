@@ -68,6 +68,7 @@ For a pdf output, try
 1. ## Use "- " to itemize things and use '1. ' to enumerate things.
 
     `- one higgs is not enough`
+
     `- two higgses are not enough`
 
 1. ## each row of a table should start with '|' and end with '|'.
@@ -81,6 +82,7 @@ For a pdf output, try
 1. ## figures, the format is `[size](path to the figure)`
 
     `[0.5](fig/plot1.png)`
+
     `[0.5](fig/plot2.pdf)`
 
 # Contact and other information
