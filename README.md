@@ -1,15 +1,15 @@
 
-# Description
+## Description
 
 Markdown is found to be easy for writing notes. I want to use it for presentation as my life is filled with meetings and slides. This little tool is to convert a markdown-like file to latex slides. With pdflatex installed, a PDF output is available.
 
-# How to get it ?
+## How to get it ?
 
 	git clone https://github.com/xialigang/md2slides
 	cd md2slides
 	source install.sh
 
-# How to use it?
+## How to use it?
 
 For a tex output, try
 	
@@ -21,11 +21,11 @@ For a pdf output, try
 
   Actually, it is to convert talk.md to talk.tex and then convert talk.tex to talk.pdf using pdflatex (this should be installed for a PDF output). You are recommended to try exporting '.tex' firstly, which is easy for debugging.
 
-# How to write the markdown-like file?
+## How to write the markdown-like file?
 
   Basically, the common markdown grammar is supported. In addition, there are a few items, which are original for slide and will not increase the difficulty of using it. Examples given below actually tell  EVERYTHING. A full example is put in 'example/'.
 
-1. ## latex theme ('Warsaw' by default, starts with '#th ', there is a blank after '#th'.)
+1. ### latex theme ('Warsaw' by default, starts with '#th ', there is a blank after '#th'.)
 
     `#th Warsaw`
 
@@ -33,11 +33,11 @@ For a pdf output, try
 
     `#p epsfig dcolumn`
 
-1. ## latex newcommands ( if necessary for writting convenience, starts with '#nc ', there is a blank after '#nc', an equal sign for a newcommand and a blanck to separate multiple newcommands. )
+1. ### latex newcommands ( if necessary for writting convenience, starts with '#nc ', there is a blank after '#nc', an equal sign for a newcommand and a blanck to separate multiple newcommands. )
 
     `#nc \mup=\mu^{+} \mum=\mu^{-}`
 
-1. ## talk title (title of the talk, starts with '#t ' or '# ' and there is a blank after '#t' or '#'.)
+1. ### talk title (title of the talk, starts with '#t ' or '# ' and there is a blank after '#t' or '#'.)
 
     `#t Search for an extra higgs using the final state $\mup\mum$`
     
@@ -45,11 +45,11 @@ For a pdf output, try
     
     `# Search for an extra higgs using the final state $\mup\mum$`
 
-1. ## talk author (the author(s) for the talk, starts with '#a ' and there is a blank after '#a'.)
+1. ### talk author (the author(s) for the talk, starts with '#a ' and there is a blank after '#a'.)
 
     `#a \underline{author A}, author B`
 
-1. ## frame, frames are separated by `---`
+1. ### frame, frames are separated by `---`
 
     `frame 1`
 
@@ -61,17 +61,17 @@ For a pdf output, try
 
     `frame 3`
 
-1. ## frame title (starts with '## ' and there is a blank after '##'.)
+1. ### frame title (starts with '### ' and there is a blank after '###'.)
 
-    `## why an extra higgs?
+    `### why an extra higgs?
 
-1. ## Use "- " to itemize things and use '1. ' to enumerate things.
+1. ### Use "- " to itemize things and use '1. ' to enumerate things.
 
     `- one higgs is not enough`
 
     `- two higgses are not enough`
 
-1. ## each row of a table should start with '|' and end with '|'.
+1. ### each row of a table should start with '|' and end with '|'.
 
     `| model | description |`
     
@@ -79,22 +79,22 @@ For a pdf output, try
     
     `| SUSY | predict more particles |`
 
-1. ## figures, the format is `[size](path to the figure)`
+1. ### figures, the format is `[size](path to the figure)`
 
     `[0.5](fig/plot1.png)`
 
     `[0.5](fig/plot2.pdf)`
     
 
-1. ## Latex formula is supported.
+1. ### Latex formula is supported.
 
     `$h(125) \to \mup \mum$`
 
-# Contact and other information
+## Contact and other information
 
     Ligang Xia, <ligang.xia@cern.ch>
 
-# Free to use it and have a good time!
+## Free to use it and have a good time!
     
 
 
