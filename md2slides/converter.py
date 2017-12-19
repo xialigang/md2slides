@@ -24,7 +24,7 @@ from six.moves import configparser
 
 
 class Converter(object):
-    default_packages = ['listings', 'array', 'graphicx', 'lineno', 'dcolumn', 'bm', 'color', 'overpic', 'multirow']
+    default_packages = ['listings', 'array', 'graphicx', 'lineno', 'dcolumn', 'bm', 'color', 'overpic', 'multirow', 'epstopdf']
     default_newcommands = []
     author = 'who?'
     title = 'what title?'
@@ -107,6 +107,8 @@ class Converter(object):
                 elif attr == 'package':
                     line0 = line0.split(' ')
                     for p in line0:
+                        if p in self.default_packages:
+                            continue
                         self.default_packages.append(p)
                 elif attr == 'newcommand':
                     line0 = line0.split(' ')
@@ -277,7 +279,7 @@ class Converter(object):
         #dummy_fh = open(os.path.devnull, 'w')
 
         try:
-            command = ["pdflatex", f.name]
+            command = ["pdflatex", "-shell-escape", f.name]
             Popen(command).communicate()
         except Exception:
             raise EnvironmentError(u"Unable to generate PDF file using "
