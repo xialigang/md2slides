@@ -61,9 +61,9 @@ For a pdf output, try
 
     `frame 3`
 
-1. ### frame title (starts with '### ' and there is a blank after '###'.)
+1. ### frame title (starts with '## ' and there is a blank after '###'.)
 
-    `### why an extra higgs?
+    `## why an extra higgs?
 
 1. ### Use "- " to itemize things and use '1. ' to enumerate things.
 
