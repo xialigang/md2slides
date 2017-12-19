@@ -83,6 +83,8 @@ For a pdf output, try
 
     `[0.5](fig/plot1.png)`
 
+    `[0.5](fig/plot1.eps)`
+
     `[0.5](fig/plot2.pdf)`
     
 
