@@ -205,7 +205,9 @@ class Converter(object):
                     enumerate_status = 0
                     self.content.append('\\end{enumerate} \n\n')
                 line = line0.strip()
-                self.content.append(line + '\n\n')
+                self.content.append(line + '\n')
+                #self.content.append(line + '\n\n')
+        self.content.append('\n\n')
         self.content.append('\\end{frame} \n\n')
 
     def write_all_frames(self, source):
