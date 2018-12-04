@@ -4,7 +4,7 @@ import os
 import re
 import codecs
 import inspect
-import jinja2
+#import jinja2
 import shutil
 import tempfile
 
@@ -94,7 +94,7 @@ class Converter(object):
         return line, 'text'
 
     def update_basic_info(self, source):
-        print 'it is doing update_basic_info' 
+        print 'it is doing update_basic_info'
         with open(source, 'r') as f0:
             while 1:
                 line0 = f0.readline()
