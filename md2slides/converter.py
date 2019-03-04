@@ -163,7 +163,7 @@ class Converter(object):
                     s += '\\\\ \n'
                 line = line.split('|')
                 tablealign = ''
-                for i in range(len(line)+1):
+                for i in range(len(line)):
                     tablealign += 'l'
                 if table_status == 1:
                     self.content.append('\\begin{table}\\begin{tabular} {'+tablealign+'} \n \\hline\\hline \n')
