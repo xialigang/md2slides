@@ -25,7 +25,7 @@ For a pdf output, try
 
   Basically, the common markdown grammar is supported. In addition, there are a few items, which are original for slide and will not increase the difficulty of using it. Examples given below actually tell  EVERYTHING. A full example is put in 'example/'.
 
-1. ### latex theme ('Warsaw' by default, starts with '#th ', there is a blank after '#th'.)
+1. ## latex theme ('Warsaw' by default, starts with '#th ', there is a blank after '#th'.)
 
     `#th Warsaw`
 
@@ -33,11 +33,11 @@ For a pdf output, try
 
     `#p epsfig dcolumn`
 
-1. ### latex newcommands ( if necessary for writting convenience, starts with '#nc ', there is a blank after '#nc', an equal sign for a newcommand and a blanck to separate multiple newcommands. )
+1. ## latex newcommands ( if necessary for writting convenience, starts with '#nc ', there is a blank after '#nc', an equal sign for a newcommand and a blanck to separate multiple newcommands. )
 
     `#nc \mup=\mu^{+} \mum=\mu^{-}`
 
-1. ### talk title (title of the talk, starts with '#t ' or '# ' and there is a blank after '#t' or '#'.)
+1. ## talk title (title of the talk, starts with '#t ' or '# ' and there is a blank after '#t' or '#'.)
 
     `#t Search for an extra higgs using the final state $\mup\mum$`
     
@@ -45,11 +45,11 @@ For a pdf output, try
     
     `# Search for an extra higgs using the final state $\mup\mum$`
 
-1. ### talk author (the author(s) for the talk, starts with '#a ' and there is a blank after '#a'.)
+1. ## talk author (the author(s) for the talk, starts with '#a ' and there is a blank after '#a'.)
 
     `#a \underline{author A}, author B`
 
-1. ### talk date (if empty, it will be the day of your last modification. You can also set 'nodate'.)
+1. ## talk date (if empty, it will be the day of your last modification. You can also set 'nodate'.)
 
     `#date 01-01-2020`
     `#date nodate`
@@ -58,7 +58,7 @@ For a pdf output, try
    `#logo [0.2,0.2](atlas_logo.png, warwick_logo.jpg)`
 
 
-1. ### frame, frames are separated by `---`
+1. ## frame, frames are separated by `---`
 
     `frame 1`
 
@@ -70,17 +70,17 @@ For a pdf output, try
 
     `frame 3`
 
-1. ### frame title (starts with '## ' and there is a blank after '###'.)
+1. ## frame title (starts with '## ' and there is a blank after '###'.)
 
     `## why an extra higgs?
 
-1. ### Use "- " to itemize things and use '1. ' to enumerate things.
+1. ## Use "- " to itemize things and use '1. ' to enumerate things.
 
     `- one higgs is not enough`
 
     `- two higgses are not enough`
 
-1. ### each row of a table should start with '|' and end with '|'.
+1. ## each row of a table should start with '|' and end with '|'.
 
     `| model | description |`
     
@@ -88,7 +88,7 @@ For a pdf output, try
     
     `| SUSY | predict more particles |`
 
-1. ### figures, the format is `[size](path to the figure)`
+1. ## figures, the format is `[size](path to the figure)`
 
     `[0.5](fig/plot1.png)`
 
@@ -99,7 +99,7 @@ For a pdf output, try
     `[3cm,4cm](fig/plot2.pdf)`
     
 
-1. ### Latex formula is supported.
+1. ## Latex formula is supported.
 
     `$h(125) \to \mup \mum$`
 
