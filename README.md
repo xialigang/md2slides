@@ -49,6 +49,15 @@ For a pdf output, try
 
     `#a \underline{author A}, author B`
 
+1. ### talk date (if empty, it will be the day of your last modification. You can also set 'nodate'.)
+
+    `#date 01-01-2020`
+    `#date nodate`
+1. ## collaboration/university/institute log (if you wish, the format is '[logo size](logo path)')
+
+   `#logo [0.3](atlas_logo.png)`
+
+
 1. ### frame, frames are separated by `---`
 
     `frame 1`
@@ -85,7 +94,9 @@ For a pdf output, try
 
     `[0.5](fig/plot1.eps)`
 
-    `[0.5](fig/plot2.pdf)`
+    `[0.5,0.4](fig/plot2.pdf)`
+    
+    `[3cm,4cm](fig/plot2.pdf)`
     
 
 1. ### Latex formula is supported.

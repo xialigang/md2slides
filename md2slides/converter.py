@@ -28,7 +28,7 @@ class Converter(object):
     default_newcommands = []
     author = 'who?'
     title = 'what title?'
-    dict_marks = {'#th ':'theme', '#pkg ':'package', '#nc ': 'newcommand', '#t ':'title', '# ':'title', '## ': 'frametitle', '#a ':'author', '|':'table', '[]()':'figure', '- ':'item', '1. ':'enumerate' }
+    dict_marks = {'#th ':'theme', '#pkg ':'package', '#nc ': 'newcommand', '#t ':'title', '# ':'title', '## ': 'frametitle', '#a ':'author', '#logo ': 'logo', '#date ': 'date',  '|':'table', '[]()':'figure', '- ':'item', '1. ':'enumerate' }
     content = []
     source_abspath = ''
 
@@ -118,6 +118,10 @@ class Converter(object):
                     self.author = line0
                 elif attr == 'title':
                     self.title = line0
+                elif attr == 'logo':
+                    self.logo = line0
+                elif attr == 'date':
+                    self.date = line0
                 else:
                     continue
 
@@ -138,7 +142,33 @@ class Converter(object):
         self.content.append('\\begin{frame} \n\n')
         self.content.append('\\title{'+self.title+'}\n')
         self.content.append('\\author{'+self.author+'}\n')
+        if 'nodate' in self.date:
+            self.content.append('\\date{}\n')
+        elif self.date != '':
+            self.content.append('\\date{'+self.date+'}\n')
         self.content.append('\\titlepage\n\n')
+        if self.logo != '':
+                line = self.logo.strip()
+                figure_size = line[line.find('[')+1:line.find(']')]
+                figure_path = line[line.find('(')+1:line.find(')')]
+                figure_tail = line[line.find(')')+1:len(line)]
+                figure_width = ''
+                figure_height = ''
+                figure_size = figure_size.split(',')
+                figure_width = 'width = '+figure_size[0]
+                if 'mm' not in figure_size[0] and 'cm' not in figure_size[0]:
+                    figure_width += '\\textwidth'
+                if len(figure_size)>1:
+                    figure_height = 'height = '+figure_size[1]
+                    if 'mm' not in figure_size[1] and 'cm' not in figure_size[1]:
+                        figure_height += '\\textheight'
+                figure_size0 = figure_width
+                if len(figure_size)>1:
+                    figure_size0 += ', ' + figure_height
+                list_logos = figure_path.split(',')
+                self.content.append('\\center\n')
+                for logo in list_logos:
+                    self.content.append('\\includegraphics['+ figure_size0 +']{'+logo+'} '+figure_tail+'\n')
         self.content.append('\\end{frame}\n\n')
 
     def write_one_frame(self, lines):
@@ -176,10 +206,26 @@ class Converter(object):
                 figure_size = line[line.find('[')+1:line.find(']')]
                 figure_path = line[line.find('(')+1:line.find(')')]
                 figure_tail = line[line.find(')')+1:len(line)]
-                if figure_status == 1:
-                    self.content.append('\\begin{figure}[htbp] \n')
-                self.content.append('\\includegraphics[width ='+figure_size+'\\textwidth]{'+figure_path+'} '+figure_tail+'\n')
+                figure_width = ''
+                figure_height = ''
+                figure_size = figure_size.split(',')
+                figure_width = 'width = '+figure_size[0]
+                if 'mm' not in figure_size[0] and 'cm' not in figure_size[0]:
+                    figure_width += '\\textwidth'
+                if len(figure_size)>1:
+                    figure_height = 'height = '+figure_size[1]
+                    if 'mm' not in figure_size[1] and 'cm' not in figure_size[1]:
+                        figure_height += '\\textheight'
+                figure_size0 = figure_width
+                if len(figure_size)>1:
+                    figure_size0 += ', ' + figure_height
+                #if figure_status == 1:
+                    #self.content.append('\\begin{figure}[htbp] \n')
+                self.content.append('\\includegraphics['+ figure_size0 +']{'+figure_path+'} '+figure_tail+'\n')
             elif attr == 'item':
+                if enumerate_status > 0:
+                    enumerate_status = 0
+                    self.content.append('\\end{enumerate} \n\n')
                 item_status += 1
                 line = line0.strip()
                 if item_status == 1:
@@ -197,13 +243,13 @@ class Converter(object):
                     self.content.append('\\hline\\hline \n \\end{tabular}\\end{table} \n\n')
                 if figure_status > 0:
                     figure_status = 0
-                    self.content.append('\\end{figure} \n\n')
-                if item_status > 0:
-                    item_status = 0
-                    self.content.append('\\end{itemize} \n\n')
+                    #self.content.append('\\end{figure} \n\n')
                 if enumerate_status > 0:
                     enumerate_status = 0
                     self.content.append('\\end{enumerate} \n\n')
+                if item_status > 0:
+                    item_status = 0
+                    self.content.append('\\end{itemize} \n\n')
                 line = line0.strip()
                 self.content.append(line + '\n')
                 #self.content.append(line + '\n\n')
