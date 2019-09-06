@@ -1,4 +1,4 @@
 
-- 06-09-2019, add settings on 'date' and 'logo', update figure settings, allow to adjust on width and height
+- 06-09-2019, add settings on 'date' and 'logo', update figure settings, allow to adjust on width and height, allow mixture of itemize and enumerate
 - 19-12-2017, add 'epstopdf' to the default package. Now "eps" plots can be
 used.

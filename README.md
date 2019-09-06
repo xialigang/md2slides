@@ -55,7 +55,7 @@ For a pdf output, try
     `#date nodate`
 1. ## collaboration/university/institute log (if you wish, the format is '[logo size](logo path)')
 
-   `#logo [0.3](atlas_logo.png)`
+   `#logo [0.2,0.2](atlas_logo.png, warwick_logo.jpg)`
 
 
 1. ### frame, frames are separated by `---`
